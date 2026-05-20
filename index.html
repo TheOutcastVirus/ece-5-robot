@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bot Bot Bot Sahur — ECE 5 UCSD</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">🤖 Bot Bot Bot Sahur</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#video">Demo</a></li>
+        <li><a href="#log">Build Log</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">UC San Diego · ECE 5 · Spring 2026</p>
+      <h1 class="hero-title">Bot Bot Bot<br><span>Sahur</span></h1>
+      <p class="hero-sub">
+        We built a line-following robot from scratch — soldering, 3D printing, and a PID control loop tuned by hand. Here's what we made:
+      <div class="hero-actions">
+        <a href="#gallery" class="btn">See the Build</a>
+        <a href="#video" class="btn btn--outline">Watch Demo</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="robot-icon" aria-hidden="true">
+        <div class="robot-head">
+          <div class="robot-eye left"></div>
+          <div class="robot-eye right"></div>
+          <div class="robot-mouth"></div>
+        </div>
+        <div class="robot-body">
+          <div class="robot-panel"></div>
+        </div>
+        <div class="robot-wheels">
+          <div class="robot-wheel"></div>
+          <div class="robot-wheel"></div>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="58" stroke="#FFCD00" stroke-width="3"/>
+          <text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" fill="#FFCD00" font-size="11" font-family="sans-serif" font-weight="700" letter-spacing="2">UC SAN DIEGO</text>
+          <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="22" font-family="sans-serif" font-weight="800">ECE 5</text>
+          <text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" fill="#FFCD00" font-size="10" font-family="sans-serif" letter-spacing="1">SPRING 2026</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">What We Built</h2>
+      <p class="section-sub">An autonomous line-following car built from scratch — breadboards, solder joints, 3D-printed parts, and a PID controller we tuned by hand. No promises on the first 15 tries.</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🧠</div>
+          <h3>ESP32 Dev Board</h3>
+          <p>The brain of the robot. Reads all sensor inputs, runs the PID control loop, and sends motor commands — all over Arduino IDE via USB-C.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">📡</div>
+          <h3>7× Photoresistors</h3>
+          <p>Voltage dividers with 10 kΩ resistors form a sensor array across the front of the robot. They detect the contrast between black tape and white surface to keep the bot on the line.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🎛️</div>
+          <h3>4× Potentiometers</h3>
+          <p>Dial in Speed, P, I, and D values on the fly — no re-uploading code. Twist clockwise to increase, counterclockwise to decrease (or the other way around, we checked).</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">⚡</div>
+          <h3>L298N Motor Driver</h3>
+          <p>Controls two DC motors independently via PWM. IN1/IN2 set direction, ENA varies speed. Jumper removed for full variable-speed control. All grounds tied together — learned that one the hard way.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🚗</div>
+          <h3>2× DC Motors + Wheels</h3>
+          <p>Yellow TT gear motors taped to the chassis, wires soldered and strain-relieved with a generous glob of hot glue. One caster in front keeps everything level.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🖨️</div>
+          <h3>3D-Printed Chassis</h3>
+          <p>Custom-designed in Onshape, printed in PLA. Modified from the base template to include mounts for the breadboard, ESP32, and the photoresistor array up front.</p>
+        </div>
+      </div>
+
+      <!-- Parts List -->
+      <div class="parts-section">
+        <h3 class="parts-title">Full Parts List</h3>
+        <div class="parts-grid">
+          <div class="parts-col">
+            <h4>Electronics</h4>
+            <ul>
+              <li>1× ESP32 Dev Board</li>
+              <li>1× L298N Motor Driver</li>
+              <li>2× DC Motors</li>
+              <li>7× Photoresistors</li>
+              <li>4× Potentiometers</li>
+              <li>7× 10 kΩ Resistors</li>
+              <li>LEDs (status indicators)</li>
+              <li>1× 9V Battery + connector</li>
+              <li>1× USB-C Cable</li>
+              <li>2× Breadboards</li>
+            </ul>
+          </div>
+          <div class="parts-col">
+            <h4>Mechanical</h4>
+            <ul>
+              <li>1× 3D-Printed Cart Chassis</li>
+              <li>2× Wheels</li>
+              <li>1× Caster Wheel</li>
+              <li>M3×6 Phillips Head Screws (caster mount)</li>
+            </ul>
+            <h4 style="margin-top:1.25rem">Tools &amp; Software</h4>
+            <ul>
+              <li>Soldering station</li>
+              <li>Hot glue gun</li>
+              <li>Screwdriver</li>
+              <li>Arduino IDE</li>
+              <li>Onshape (CAD)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section--dark" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Build Gallery</h2>
+      <p class="section-sub">Step by step assembly of the finished robot: </p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!--
+          To add a real photo, replace a placeholder block with:
+
+          <div class="gallery-item">
+            <img src="assets/images/your-photo.jpg" alt="Brief description" />
+            <span class="caption-overlay">Caption text here</span>
+          </div>
+
+          Photos will be clickable and open in a lightbox automatically.
+        -->
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+        <div class="gallery-item placeholder"><span>📸 Photo Coming Soon</span></div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section" id="video">
+    <div class="container">
+      <h2 class="section-title">Demo Video</h2>
+      <p class="section-sub">Watch the robot do its thing.</p>
+
+      <div class="video-wrapper">
+        <!--
+          YouTube embed — replace VIDEO_ID:
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen title="Robot demo"></iframe>
+
+          Local video file:
+            <video controls>
+              <source src="assets/videos/demo.mp4" type="video/mp4" />
+            </video>
+        -->
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>Demo video coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD LOG -->
+  <section class="section section--dark" id="log">
+    <div class="container">
+      <h2 class="section-title">Build Log</h2>
+      <p class="section-sub">Every challenge, in order. </p>
+      <div class="log-timeline">
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 1A</span>
+              <span class="log-status status--done">Done</span>
+            </div>
+            <h3>Potentiometers — Tuning Interface</h3>
+            <p>Wired 4 potentiometers on a breadboard to act as live-adjust knobs for Speed, P, I, and D — no reflashing required. Fixed the <code>FIX ME</code>s in the starter code and verified each pot printed correctly to the serial monitor. Discovered that CW increases the value; swapping the wiper and power pins reverses it.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 1B</span>
+              <span class="log-status status--done">Done</span>
+            </div>
+            <h3>Photoresistors — Sensor Array</h3>
+            <p>Built 7 voltage dividers using photoresistors + 10 kΩ resistors. Enabled <em>USB CDC On Boot</em> so values printed to serial. Tested over black and white surfaces at different heights to find the sweet spot — too close and it saturates, too far and contrast disappears. Noted that shadows from overhead lighting shift readings; a light shield will help.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 1C</span>
+              <span class="log-status status--done">Done</span>
+            </div>
+            <h3>Motor Driver &amp; ESP32 — Prepping the Motors</h3>
+            <p>Soldered wires onto both DC motors and added hot-glue strain relief over each joint. Soldered the 9V battery connector to the ESP32 (not the motor driver — max 7.4 V through that port!). Removed the ENA/ENB jumpers for PWM speed control. Wired motor driver IN1–IN4 to ESP32 GPIO pins, tied all grounds together. Coded forward/backward for 3 s each using the L298N library, then tried a figure-8. One motor ran backwards — swapped the leads on that channel to fix it.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 1D</span>
+              <span class="log-status status--done">Done</span>
+            </div>
+            <h3>CAD — Chassis Design in Onshape</h3>
+            <p>Made a copy of the provided Onshape template and modified it: added a breadboard tray, ESP32 mount, and a front bracket to hold the photoresistor array at the correct sensor height. Sized caster mounting holes for M3×6 screws. Sent to 3D printer.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 2</span>
+              <span class="log-status status--done">Done</span>
+            </div>
+            <h3>Assembly — Putting It All Together</h3>
+            <p>Mounted DC motors to chassis with tape. Screwed caster to the underside with M3×6 Phillips heads — snug but not over-tightened into the plastic. Fitted both breadboards, placed ESP32 in its mount, and routed all wiring. First full power-on with everything attached: motors spin, sensors read, no smoke.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 3</span>
+              <span class="log-status status--progress">In Progress</span>
+            </div>
+            <h3>Line Following — PID Tuning</h3>
+            <p>Wrote the PID control loop using the photoresistor array for error calculation. Using the 4 potentiometers to tune P, I, D, and Speed live on the track. Goal: smooth line following without oscillation or overshooting turns.</p>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <div class="log-dot"></div>
+          <div class="log-body">
+            <div class="log-meta">
+              <span class="log-date">Lab 4</span>
+              <span class="log-status status--planned">Planned</span>
+            </div>
+            <h3>Competition Day</h3>
+            <p>Race against other teams' robots on the official track. Fastest clean run wins. Fingers crossed — everything works perfectly in our heads.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team">
+    <div class="container">
+      <h2 class="section-title">The Team</h2>
+      <p class="section-sub">The humans responsible for this machine.</p>
+
+      <div class="team-grid">
+        <!--
+          To use a real photo, replace the emoji div with:
+              <div class="team-avatar"><img src="assets/images/name.jpg" alt="Name" /></div>
+        -->
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>Vela B.</h3>
+          <p>ECE · UCSD</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>Vikram K.</h3>
+          <p>ECE · UCSD</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>Peter S.</h3>
+          <p>ECE · UCSD</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>Anthony Z.</h3>
+          <p>ECE · UCSD</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Bot Bot Bot Sahur &nbsp;·&nbsp; Vela B. · Vikram K. · Peter S. · Anthony Z. &nbsp;·&nbsp; ECE 5 · UC San Diego · Spring 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
