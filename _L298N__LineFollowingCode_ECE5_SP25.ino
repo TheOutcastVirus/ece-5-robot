@@ -244,7 +244,7 @@ void RunMotors() {
   M2SpeedtoMotor = min(NOMINALSPEED + SpRead + M2P, 255) * -1; // remember M1Sp & M2Sp is defined at beginning of code (default 60)
   
   runMotorAtSpeed(LEFT, M1SpeedtoMotor); // run right motor  //by the BIG Ant and Pete (SWAPPED M1 and M2 and multiplied above by -1) 
-  runMotorAtSpeed(RIGHT, M2SpeedtoMotor); // run left motor  //directions should be correct but u can check 
+  runMotorAtSpeed(RIGHT, M2SpeedtoMotor); // run left motor  //directions should be correct but u can check //physical wiring changes considered
 } // end RunMotors()
 
 // A function that commands a specified motor to move towards a given direction at a given speed
