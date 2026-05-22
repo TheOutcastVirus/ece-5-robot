@@ -39,7 +39,7 @@
 
 #define PRINTALLDATA        0  // Turn to 1  to prints ALL the data when changed to 1, Could be useful for debugging =)
                                 // !! Turn to 0 when running robot untethered - IMPORTANT NOTE BY KOREY
-#define NOMINALSPEED        30 // This is the base speed for both motors, can also be increased by using potentiometers
+#define NOMINALSPEED        60 // This is the base speed for both motors, can also be increased by using potentiometers
 
 // ************************************************************************************************* //
 
