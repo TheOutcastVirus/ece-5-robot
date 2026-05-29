@@ -39,8 +39,9 @@
 
 #define PRINTALLDATA        0  // Turn to 1  to prints ALL the data when changed to 1, Could be useful for debugging =)
                                 // !! Turn to 0 when running robot untethered - IMPORTANT NOTE BY KOREY
-#define NOMINALSPEED        60 // This is the base speed for both motors, can also be increased by using potentiometers
-
+#define NOMINALSPEED        165 // This is the base speed for both motors, can also be increased by using potentiometers
+                      //changed from 30 to 60 by the BIG Korey
+                      //max value is 255, we'll try 165 for now (7 laps in 1 min with 60)
 // ************************************************************************************************* //
 
 // ****** DECLARE PINS HERE  ****** 
@@ -53,8 +54,8 @@ L298NX2 DriveMotors(  42, 41, 40,      37, 39, 38);
 enum side {LEFT, RIGHT};
 
 //updated by the BIG Ant
-int LDR_Pin[] = {11,10,9,8,7,6,5}; // SET PINS CONNECTED TO PHOTORESISTORS // FROM LEFT TO RIGHT OF THE ROBOT, ROBOT IS ORIENTED WHERE PHOTORESISOTRS FARTHEST FROM YOU AND WHEELS ARE CLOSEST TO YOU      
-
+int LDR_Pin[] = {5,6,7,8,9,10,12}; // SET PINS CONNECTED TO PHOTORESISTORS // FROM LEFT TO RIGHT OF THE ROBOT, ROBOT IS ORIENTED WHERE PHOTORESISOTRS FARTHEST FROM YOU AND WHEELS ARE CLOSEST TO YOU      
+        //ORIGINAL before flipping: {12,10,9,8,7,6,5}
 // Potentiometer Pins - updated by the BIG Ant
 const int S_pin = 4; // Pin connected to Speed potentiometer //RIGHT MOST potentiometer
 const int P_pin = 3; // Pin connected to P term potentiometer
