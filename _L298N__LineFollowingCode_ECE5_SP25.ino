@@ -54,7 +54,7 @@ L298NX2 DriveMotors(  42, 41, 40,      37, 39, 38);
 enum side {LEFT, RIGHT};
 
 //updated by the BIG Ant
-int LDR_Pin[] = {5,6,7,8,9,10,12}; // SET PINS CONNECTED TO PHOTORESISTORS // FROM LEFT TO RIGHT OF THE ROBOT, ROBOT IS ORIENTED WHERE PHOTORESISOTRS FARTHEST FROM YOU AND WHEELS ARE CLOSEST TO YOU      
+int LDR_Pin[] = {6,7,8,9,10,11,12}; // SET PINS CONNECTED TO PHOTORESISTORS // FROM LEFT TO RIGHT OF THE ROBOT, ROBOT IS ORIENTED WHERE PHOTORESISOTRS FARTHEST FROM YOU AND WHEELS ARE CLOSEST TO YOU      
         //ORIGINAL before flipping: {12,10,9,8,7,6,5}
 // Potentiometer Pins - updated by the BIG Ant
 const int S_pin = 4; // Pin connected to Speed potentiometer //RIGHT MOST potentiometer
